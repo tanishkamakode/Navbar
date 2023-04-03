@@ -20,9 +20,7 @@ const Navbar = () => {
         </div>
         <div
           className={
-            showLinks
-              ? "links-container show-container"
-              : "links-container hide-container"
+            showLinks ? "links-container show-container" : "links-container"
           }
         >
           <ul className="links">
@@ -35,6 +33,17 @@ const Navbar = () => {
             })}
           </ul>
         </div>
+
+        {/* Social Links */}
+        <ul className="social-icons">
+          {social.map((socialIcon) => {
+            return (
+              <li key={socialIcon.id} href={socialIcon.url}>
+                {socialIcon.icon}
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </nav>
   );
